@@ -4,7 +4,13 @@ PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
 echo "Enter your username:"
 read USERNAME
 
+echo "# Adding user statistics section" >> guess.sh
+git add guess.sh
+git commit -m "chore: add section comment"
+
 USER_INFO=$($PSQL "SELECT user_id, games_played, best_game FROM users WHERE username='$USERNAME'")
+
+
 
 if [[ -n $USER_INFO ]]
 then
@@ -52,7 +58,3 @@ if [[ -z $BEST_GAME || $NUMBER_OF_GUESSES -lt $BEST_GAME ]]
 then
   UPDATE_BEST_GAME=$($PSQL "UPDATE users SET best_game=$NUMBER_OF_GUESSES WHERE user_id=$USER_ID")
 fi
-
-
-
-

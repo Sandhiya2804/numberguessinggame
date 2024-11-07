@@ -90,7 +90,7 @@ ALTER TABLE ONLY public.users ALTER COLUMN user_id SET DEFAULT nextval('public.u
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.users VALUES (1, 'sandhiya', 0, NULL);
+INSERT INTO public.users VALUES (1, 'sandhiya', 1, 4);
 
 
 --
@@ -119,5 +119,4 @@ ALTER TABLE ONLY public.users
 --
 -- PostgreSQL database dump complete
 --
-
 
